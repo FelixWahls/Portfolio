@@ -1,0 +1,111 @@
+@import "./../../shared/variables.scss";
+
+section {
+  @include dFlex($ai: flex-start, $jc: flex-start, $g: 64px);
+  height: 100vh;
+  width: 100%;
+  padding-top: 106px;
+  position: relative;
+}
+
+.profile-img {
+  margin-left: 140px;
+  overflow: hidden;
+  > img {
+    max-width: 600px;
+    height: 100%;
+    max-height: 800px;
+  }
+}
+
+.heading-container {
+  @include dFlex($jc: flex-start, $g: 44px);
+  flex-direction: column;
+  margin-top: 170px;
+}
+
+.heading {
+  @include dFlex($jc: flex-start, $g: 35px);
+  line-height: 1;
+
+  > .vertical {
+    font-size: 64px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+
+  > div {
+    > h1 {
+      font-size: 90px;
+      font-weight: 700;
+    }
+
+    > p {
+      font-size: 58px;
+      color: #4b47ff;
+    }
+  }
+}
+
+button {
+  padding: 15px 30px;
+  background-color: $main-focus;
+  border: unset;
+  color: white;
+  font-size: 23px;
+  border-radius: 10px;
+  transition: all 125ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #4b47ff;
+    padding: 20px 40px;
+  }
+}
+
+.frame-wrapper {
+  position: absolute;
+  max-width: 1920px;
+  max-height: 800px;
+  width: 100vw;
+  top: 640px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+//contacts section
+
+.contacts {
+  @include dFlex($jc: flex-start, $g: 42px);
+  position: relative;
+  z-index: 20;
+
+  > .hor-line {
+    width: 150px;
+    height: 4px;
+    background-color: #4b47ff;
+    border-radius: 0 8px 8px 0;
+  }
+
+  > svg:hover {
+    scale: 115%;
+    cursor: pointer;
+
+    path {
+      fill: $main-focus;
+    }
+  }
+
+  > a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+  }
+}
