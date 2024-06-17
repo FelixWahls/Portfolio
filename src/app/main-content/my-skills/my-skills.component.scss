@@ -1,0 +1,59 @@
+@import "./../../shared/variables.scss";
+
+section {
+  width: 100%;
+  @include dFlex($jc: space-between, $g: 48px);
+  padding-left: 100px;
+  margin-top: 270px;
+
+  > .skills {
+    @include dFlex($jc: flex-start);
+    row-gap: 54px;
+    column-gap: 123px;
+    flex-wrap: wrap;
+    max-width: 60%;
+
+    > .single-skill {
+      width: 88px;
+      height: 100px;
+      @include dFlex($g: 16px);
+      flex-direction: column;
+    }
+  }
+
+  > .skills-headline {
+    @include dFlex($g: 34px);
+    flex-direction: column;
+    width: 571px;
+
+    > .heading {
+      @include dFlex($jc: flex-end, $g: 42px);
+      width: 100%;
+
+      > h2 {
+        font-size: 90px;
+      }
+
+      > .hor-line {
+        width: 58px;
+        height: 4px;
+        border-radius: 4px 0 0 4px;
+        background-color: #4b47ff;
+      }
+    }
+
+    > p {
+      padding-right: 100px;
+      text-align: justify;
+    }
+
+    > button {
+      color: white;
+      font-size: 23px;
+      background-color: $main-focus;
+      border: unset;
+      padding: 15px 30px;
+      border-radius: 10px;
+    }
+  }
+}
