@@ -15,16 +15,31 @@ section {
 
     > .single-skill {
       width: 88px;
-      height: 100px;
       @include dFlex($g: 16px);
       flex-direction: column;
+      cursor: pointer;
+
+      > img {
+        transition: all 125ms ease-in-out;
+      }
+
+      > p {
+        text-align: center;
+      }
+
+      &:hover {
+        > img {
+          transform: translateY(-20px);
+          filter: brightness(1.2) drop-shadow(0 0 30px rgba(114, 71, 255, 0.78));
+        }
+      }
     }
   }
 
   > .skills-headline {
     @include dFlex($g: 34px);
     flex-direction: column;
-    width: 571px;
+    min-width: 571px;
 
     > .heading {
       @include dFlex($jc: flex-end, $g: 42px);
@@ -48,12 +63,19 @@ section {
     }
 
     > button {
-      color: white;
-      font-size: 23px;
+      padding: 15px 30px;
       background-color: $main-focus;
       border: unset;
-      padding: 15px 30px;
+      color: white;
+      font-size: 23px;
       border-radius: 10px;
+      transition: all 125ms ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #4b47ff;
+        transform: scale(110%);
+      }
     }
   }
 }

@@ -6,10 +6,15 @@ section {
   width: 100%;
   padding-top: 106px;
   position: relative;
+
+  > .hero-wrapper {
+    width: 100%;
+    @include dFlex($jc: center, $ai: flex-start, $g: 120px);
+    padding: 0 100px;
+  }
 }
 
 .profile-img {
-  margin-left: 140px;
   overflow: hidden;
   > img {
     max-width: 600px;

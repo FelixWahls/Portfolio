@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { skills } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-my-skills',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent {
-  skills = [
+  skills: skills[] = [
     {
       name: 'HTML',
       img: 'html',

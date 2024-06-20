@@ -1,0 +1,27 @@
+@import "./../../shared/variables.scss";
+
+section {
+  margin-top: 200px;
+}
+
+.headline-container {
+  width: 100%;
+  @include dFlex();
+  flex-direction: column;
+  position: relative;
+
+  > span {
+    width: 75%;
+    height: 4px;
+    background-color: #4b47ff;
+    position: absolute;
+    right: 0;
+  }
+
+  > h2 {
+    font-size: 90px;
+    z-index: 10;
+    background-color: $main-bg;
+    padding: 0 32px;
+  }
+}
