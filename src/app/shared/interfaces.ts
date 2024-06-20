@@ -5,7 +5,7 @@ export interface skills {
 
 export interface projects {
   name: string;
-  skills: [];
+  skills: string[];
   description: string;
   liveTest: string;
   github: string;
