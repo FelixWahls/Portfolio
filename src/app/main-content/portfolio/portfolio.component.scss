@@ -1,7 +1,13 @@
 @import "./../../shared/variables.scss";
 
-section {
+.portfolio-section {
   margin-top: 200px;
+  padding: 0 100px;
+
+  > p {
+    text-align: center;
+    margin-bottom: 100px;
+  }
 }
 
 .headline-container {
@@ -23,5 +29,75 @@ section {
     z-index: 10;
     background-color: $main-bg;
     padding: 0 32px;
+  }
+}
+
+//project section
+
+.all-projects {
+  width: 100%;
+  @include dFlex($g: 150px);
+  flex-direction: column;
+}
+
+.row-reverse {
+  @include dFlex($g: 64px);
+  flex-direction: row-reverse;
+}
+
+.single-project {
+  @include dFlex($g: 100px);
+  width: 100%;
+
+  > img {
+    height: 339px;
+  }
+
+  > .project-info {
+    max-width: 40%;
+    @include dFlex($ai: flex-start, $g: 16px);
+    flex-direction: column;
+
+    > h3 {
+      font-size: 32px;
+      color: #4b47ff;
+    }
+
+    > span {
+      font-size: 23px;
+      color: $main-focus;
+    }
+
+    > p {
+      font-size: 16px;
+    }
+  }
+}
+
+.project-btns {
+  @include dFlex($g: 86px);
+  margin-top: 20px;
+
+  > button {
+    border: unset;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 23px;
+    color: white;
+    cursor: pointer;
+  }
+
+  > .test {
+    background-color: #4b47ff;
+
+    &:hover {
+      background-color: $main-focus;
+      transition: all 100ms ease-in-out;
+    }
+  }
+
+  > .github {
+    border: 1px solid $main-focus;
+    background-color: $main-bg;
   }
 }
