@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
 import { skills } from '../../shared/interfaces';
+import AOS from 'aos';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent {
+  ngOnInit() {
+    AOS.init();
+  }
+
   skills: skills[] = [
     {
       name: 'HTML',

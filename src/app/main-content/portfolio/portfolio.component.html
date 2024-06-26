@@ -1,17 +1,29 @@
 <section class="portfolio-section">
-  <div class="headline-container">
+  <div class="headline-container" data-aos="fade-left" data-aos-offset="500">
     <span class="hor-line"></span>
     <h2>Portfolio</h2>
   </div>
-  <p>
+  <p data-aos="fade-left" data-aos-offset="500">
     Explore a selection of my work here - Interact with projects to see my
     skills in action.
   </p>
   <div class="all-projects">
     @for (project of projects; track project.name; let odd = $odd) {
     <div [ngClass]="{ 'row-reverse': odd }" class="single-project">
-      <img src="{{ project.imgSrc }}" alt="" />
-      <div class="project-info">
+      <img
+        src="{{ project.imgSrc }}"
+        alt=""
+        [attr.data-aos]="odd ? 'fade-right' : 'fade-left'"
+        data-aos-offset="600"
+        data-aos-duration="500"
+      />
+      <div
+        class="project-info"
+        [attr.data-aos]="odd ? 'fade-right' : 'fade-left'"
+        data-aos-offset="530"
+        data-aos-delay="100"
+        data-aos-duration="500"
+      >
         <h3>{{ project.name }}</h3>
         <span>{{ project.skills.join(" | ") }}</span>
         <p>{{ project.description }}</p>

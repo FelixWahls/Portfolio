@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { projects } from '../../shared/interfaces';
 import { CommonModule } from '@angular/common';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,6 +11,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './portfolio.component.scss',
 })
 export class PortfolioComponent {
+  ngOnInit() {
+    AOS.init();
+  }
+
   projects: projects[] = [
     {
       name: 'Join',
