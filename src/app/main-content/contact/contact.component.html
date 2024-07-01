@@ -3,7 +3,7 @@
     <span class="hor-line"></span>
     <h2>Contact</h2>
   </div>
-  <main data-aos="fade-up" data-aos-offset="530" data-aos-duration="700">
+  <main data-aos="fade-up" data-aos-offset="430" data-aos-duration="700">
     <div class="description">
       <h3>Got a Problem to solve?</h3>
       <p>
@@ -13,22 +13,58 @@
       <p>Need a Frontend developer? <b>Contact me!</b></p>
     </div>
     <div class="container">
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name.." />
-
-        <label for="email">E-Mail</label>
-        <input type="text" id="email" name="email" placeholder="Your email.." />
-
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Write something.."
-          style="height: 200px"
-        ></textarea>
-
-        <input type="submit" value="Submit" />
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name.."
+            formControlName="name"
+          />
+          @if (contactForm.controls.name.invalid &&
+          (contactForm.controls.name.touched ||
+          contactForm.controls.name.dirty)) {
+          <small>*Please enter your name.</small>
+          }
+        </div>
+        <div>
+          <label for="email">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email.."
+            formControlName="email"
+          />
+          @if (contactForm.controls.email.invalid &&
+          (contactForm.controls.email.touched ||
+          contactForm.controls.email.dirty)) {
+          <small>*Please enter your email.</small>
+          }
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write something.."
+            style="height: 200px"
+            formControlName="message"
+          ></textarea>
+          @if (contactForm.controls.message.invalid &&
+          (contactForm.controls.message.touched ||
+          contactForm.controls.message.dirty)) {
+          @if(contactForm.controls.message.errors?.['required']) {
+          <small>*Please enter a message.</small>
+          } @if (contactForm.controls.message.errors?.['minlength']) {
+          <small>*Message must be at least 4 chracters long.</small>
+          } }
+        </div>
+        <div class="submit-container">
+          <input type="submit" value="Send message :D" />
+        </div>
       </form>
     </div>
   </main>
