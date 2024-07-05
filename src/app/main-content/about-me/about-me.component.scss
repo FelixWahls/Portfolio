@@ -3,6 +3,14 @@
 section {
   @include dFlex($jc: space-between, $g: 149px);
   margin-top: 140px;
+  overflow-x: hidden;
+
+  > .about-shadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(60%) translateY(-30%);
+  }
 
   > .left-section {
     padding-left: 100px;

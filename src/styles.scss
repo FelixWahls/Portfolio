@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   width: 100vw;
@@ -13,11 +17,12 @@ body {
   flex-direction: column;
   background-color: $main-bg;
   color: white;
+  overflow-x: hidden;
 }
 
 app-root {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1440px;
   display: flex;
   justify-content: center;
 }
