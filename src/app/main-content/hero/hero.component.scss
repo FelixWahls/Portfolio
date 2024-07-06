@@ -204,3 +204,59 @@ button {
     display: none;
   }
 }
+
+@media (max-width: 599px) {
+  section {
+    > .hero-wrapper {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+      padding: 0;
+
+      > .profile-img {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .heading-container {
+    position: relative;
+    z-index: 25;
+    margin-left: 0;
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  .heading {
+    > .vertical {
+      font-size: 36px;
+    }
+
+    > div {
+      > h1 {
+        font-size: 52px;
+        font-weight: 700;
+      }
+
+      > p {
+        font-size: 32px;
+        color: #4b47ff;
+      }
+    }
+  }
+
+  .frame-wrapper {
+    top: 420px;
+  }
+
+  .contacts {
+    @include dFlex($jc: flex-start, $g: 42px);
+    position: relative;
+    width: 100%;
+    z-index: 20;
+
+    > .hor-line {
+      width: 25%;
+    }
+  }
+}

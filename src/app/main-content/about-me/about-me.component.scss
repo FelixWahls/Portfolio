@@ -2,14 +2,19 @@
 
 section {
   @include dFlex($jc: space-between, $g: 149px);
-  margin-top: 140px;
-  overflow-x: hidden;
+  padding-top: 140px;
+  position: relative;
 
   > .about-shadow {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateX(60%) translateY(-30%);
+    clip-path: inset(0 0 0 50%);
+
+    > img {
+      height: 550px;
+      transform: translateX(60%);
+    }
   }
 
   > .left-section {
@@ -51,6 +56,56 @@ section {
       height: auto;
       border: 4px solid $main-focus;
       border-radius: 50%;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  section {
+    gap: 64px;
+    > .left-section {
+      gap: 16px;
+
+      > h2 {
+        font-size: 72px;
+      }
+    }
+
+    > .right-section {
+      > img {
+        width: 350px;
+        height: auto;
+        border: 4px solid $main-focus;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  section {
+    > .left-section {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    > .right-section {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  section {
+    padding-right: 40px;
+    > .left-section {
+      padding-left: 40px;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    > .right-section {
+      display: none;
     }
   }
 }

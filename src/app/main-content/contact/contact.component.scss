@@ -2,6 +2,9 @@
 
 section {
   margin-top: 245px;
+  position: relative;
+  padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .section-header {
@@ -103,4 +106,13 @@ textarea.ng-valid {
 input:focus,
 textarea:focus {
   outline: none;
+}
+
+.contact-shadow {
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  max-width: 500px;
+  z-index: -1;
+  transform: rotate(90deg);
 }

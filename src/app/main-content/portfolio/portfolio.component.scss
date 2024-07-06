@@ -2,6 +2,7 @@
 
 .portfolio-section {
   margin-top: 200px;
+  position: relative;
 
   > p {
     text-align: center;
@@ -100,4 +101,27 @@
     border: 1px solid $main-focus;
     background-color: $main-bg;
   }
+}
+
+.portfolio-shadow {
+  position: absolute;
+  z-index: -1;
+}
+
+.shadow-one {
+  top: -350px;
+  left: -450px;
+  transform: rotate(-120deg);
+}
+
+.shadow-two {
+  top: 200px;
+  right: -380px;
+  transform: rotate(80deg);
+}
+
+.shadow-three {
+  top: 65%;
+  left: 0;
+  max-height: 700px;
 }
