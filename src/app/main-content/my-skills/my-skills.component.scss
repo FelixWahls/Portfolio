@@ -1,5 +1,9 @@
 @import "./../../shared/variables.scss";
 
+.mobile-button {
+  display: none;
+}
+
 section {
   width: 100%;
   @include dFlex($jc: space-between, $g: 48px);
@@ -40,6 +44,7 @@ section {
     @include dFlex($g: 34px);
     flex-direction: column;
     min-width: 571px;
+    padding-left: 16px;
 
     > .heading {
       @include dFlex($jc: flex-end, $g: 42px);
@@ -61,21 +66,71 @@ section {
       padding-right: 100px;
       text-align: justify;
     }
+  }
+}
 
-    > button {
-      padding: 15px 30px;
-      background-color: $main-focus;
-      border: unset;
-      color: white;
-      font-size: 23px;
-      border-radius: 10px;
-      transition: all 125ms ease-in-out;
-      cursor: pointer;
+.contact-btn {
+  padding: 15px 30px;
+  background-color: $main-focus;
+  border: unset;
+  color: white;
+  font-size: 23px;
+  border-radius: 10px;
+  transition: all 125ms ease-in-out;
+  cursor: pointer;
 
-      &:hover {
-        background-color: #4b47ff;
-        transform: scale(110%);
+  &:hover {
+    background-color: #4b47ff;
+    transform: scale(110%);
+  }
+}
+
+@media (max-width: 1250px) {
+  .mobile-button {
+    display: block;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  section {
+    flex-direction: column-reverse;
+    padding-left: 0;
+
+    > .skills-headline {
+      width: 100%;
+      padding-left: 0;
+
+      > .heading {
+        @include dFlex($jc: flex-end, $g: 42px);
+        width: 100%;
+
+        > h2 {
+          font-size: 72px;
+        }
+
+        > .hor-line {
+          width: 58px;
+          height: 4px;
+          border-radius: 4px 0 0 4px;
+          background-color: #4b47ff;
+        }
       }
+
+      > p {
+        padding-right: 40pxpx;
+        align-self: flex-end;
+        word-wrap: break-word;
+      }
+    }
+
+    > .skills {
+      @include dFlex($jc: center);
+      max-width: 100%;
+      padding: 0 100px;
+      row-gap: 54px;
+      column-gap: 123px;
     }
   }
 }

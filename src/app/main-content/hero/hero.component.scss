@@ -260,3 +260,39 @@ button {
     }
   }
 }
+
+@media (max-width: 440px) {
+  .heading {
+    gap: 16px;
+
+    > .vertical {
+      font-size: 26px;
+    }
+
+    > div {
+      > h1 {
+        font-size: 40px;
+      }
+
+      > p {
+        font-size: 22px;
+        color: #4b47ff;
+      }
+    }
+  }
+
+  .frame-wrapper {
+    top: 420px;
+  }
+
+  .contacts {
+    @include dFlex($jc: flex-start, $g: 42px);
+    position: relative;
+    width: 100%;
+    z-index: 20;
+
+    > .hor-line {
+      width: 25%;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 @import "./../../shared/variables.scss";
 
 section {
-  @include dFlex($jc: space-between, $g: 149px);
+  @include dFlex($jc: space-between, $g: 132px);
   padding-top: 140px;
   position: relative;
 
@@ -64,8 +64,6 @@ section {
   section {
     gap: 64px;
     > .left-section {
-      gap: 16px;
-
       > h2 {
         font-size: 72px;
       }
@@ -102,10 +100,25 @@ section {
       padding-left: 40px;
       width: 100%;
       max-width: 100%;
+      gap: 24px;
+
+      > div img {
+        margin-left: 0;
+      }
     }
 
     > .right-section {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  section {
+    > .left-section {
+      > h2 {
+        font-size: 45px;
+      }
     }
   }
 }
