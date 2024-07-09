@@ -21,6 +21,8 @@ export class ContactComponent {
     AOS.init();
   }
 
+  contactData: any;
+
   fb = inject(NonNullableFormBuilder);
   contactForm = this.fb.group({
     name: this.fb.control('', { validators: [Validators.required] }),
@@ -36,9 +38,11 @@ export class ContactComponent {
   });
 
   onSubmit() {
-    console.log(
-      this.contactForm.getRawValue(),
-      this.contactForm.controls.email
-    );
+    (this.contactData = this.contactForm.getRawValue()),
+      console.log(
+        this.contactForm.getRawValue(),
+        this.contactForm.controls.email,
+        this.contactData
+      );
   }
 }
