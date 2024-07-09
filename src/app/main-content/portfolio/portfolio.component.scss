@@ -13,21 +13,28 @@
 .headline-container {
   width: 100%;
   @include dFlex();
-  flex-direction: column;
-  position: relative;
 
-  > span {
-    width: 75%;
+  > .hor-line {
+    flex-grow: 1;
+  }
+
+  > div {
+    display: flex;
+    justify-content: flex-end;
+    .hor-line-left {
+      width: 15%;
+      height: 4px;
+      background-color: #4b47ff;
+    }
+  }
+
+  > .hor-line-right {
     height: 4px;
     background-color: #4b47ff;
-    position: absolute;
-    right: 0;
   }
 
   > h2 {
     font-size: 90px;
-    z-index: 10;
-    background-color: $main-bg;
     padding: 0 32px;
   }
 }
@@ -116,12 +123,83 @@
 
 .shadow-two {
   top: 200px;
-  right: -380px;
-  transform: rotate(80deg);
+  right: -420px;
+  transform: rotate(60deg);
 }
 
 .shadow-three {
   top: 65%;
-  left: 0;
+  left: -100px;
   max-height: 700px;
+}
+
+@media (max-width: 1250px) {
+  .headline-container {
+    > h2 {
+      font-size: 72px;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .single-project {
+    flex-direction: column;
+    gap: 0;
+
+    > img {
+      height: 339px;
+    }
+
+    > .project-info {
+      max-width: 400px;
+      align-items: center;
+
+      > span {
+        text-align: center;
+      }
+
+      > p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .all-projects {
+    padding: 0;
+  }
+  .project-btns {
+    gap: 32px;
+  }
+
+  .portfolio-shadow {
+    width: 400px;
+  }
+
+  .shadow-one {
+    top: -350px;
+    left: -150px;
+    transform: rotate(-120deg);
+  }
+
+  .shadow-two {
+    top: 200px;
+    right: -150px;
+    transform: rotate(60deg);
+  }
+
+  .shadow-three {
+    top: 65%;
+    left: -150px;
+    max-height: 700px;
+  }
+}
+
+@media (max-width: 450px) {
+  .headline-container {
+    > h2 {
+      font-size: 45px;
+    }
+  }
 }

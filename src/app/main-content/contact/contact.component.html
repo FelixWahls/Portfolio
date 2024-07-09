@@ -62,8 +62,22 @@
           <small>*Message must be at least 4 chracters long.</small>
           } }
         </div>
+        <div class="accept-privacy">
+          <div>
+            <input type="checkbox" id="check-privacy" formControlName="check" />
+            <label for="check-privacy"
+              >I've read the <span>privacy police</span> and agree to the
+              processing of my data as outlined.</label
+            >
+          </div>
+          @if (contactForm.controls.check.invalid &&
+          (contactForm.controls.check.touched ||
+          contactForm.controls.check.dirty)) {
+          <small>*Please accept the privacy police.</small>
+          }
+        </div>
         <div class="submit-container">
-          <input type="submit" value="Send message :D" />
+          <input type="submit" value="Send message :&#41;" />
         </div>
       </form>
     </div>

@@ -119,9 +119,10 @@ section {
       }
 
       > p {
-        padding-right: 40pxpx;
+        max-width: 70%;
+        padding-right: 40px;
         align-self: flex-end;
-        word-wrap: break-word;
+        text-align: end;
       }
     }
 
@@ -131,6 +132,39 @@ section {
       padding: 0 100px;
       row-gap: 54px;
       column-gap: 123px;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  section {
+    > .skills {
+      padding: 0 24px;
+      row-gap: 32x;
+      column-gap: 70px;
+    }
+    > .skills-headline {
+      min-width: 0;
+
+      > p {
+        max-width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  section {
+    > .skills-headline {
+      > .heading {
+        gap: 16px;
+        > h2 {
+          font-size: 45px;
+        }
+        > .hor-line {
+          width: 36px;
+        }
+      }
     }
   }
 }

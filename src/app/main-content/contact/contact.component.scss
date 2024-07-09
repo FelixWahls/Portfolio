@@ -108,6 +108,32 @@ textarea:focus {
   outline: none;
 }
 
+.accept-privacy {
+  > div {
+    @include dFlex($jc: flex-start, $g: 8px);
+  }
+}
+
+#check-privacy {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border: 2px solid $main-focus;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked:before {
+  content: "✓";
+  color: #1cdae6;
+  display: block;
+  text-align: center;
+  line-height: 16px;
+}
+
 .contact-shadow {
   position: absolute;
   bottom: -200px;

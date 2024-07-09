@@ -30,6 +30,9 @@ export class ContactComponent {
     message: this.fb.control('', {
       validators: [Validators.required, Validators.minLength(4)],
     }),
+    check: this.fb.control(false, {
+      validators: [Validators.requiredTrue],
+    }),
   });
 
   onSubmit() {

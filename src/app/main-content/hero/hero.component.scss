@@ -245,6 +245,10 @@ button {
     }
   }
 
+  button {
+    font-size: 16px;
+  }
+
   .frame-wrapper {
     top: 420px;
   }
@@ -293,6 +297,25 @@ button {
 
     > .hor-line {
       width: 25%;
+    }
+  }
+}
+
+@media (max-height: 700px) and (max-width: 500px) {
+  .profile-img {
+    display: flex;
+    height: 400px;
+    > img {
+      max-width: 600px;
+      height: 100%;
+      max-height: 800px;
+    }
+  }
+
+  .frame-wrapper {
+    top: 320px;
+    > img {
+      height: 100%;
     }
   }
 }
