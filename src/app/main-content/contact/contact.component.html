@@ -13,7 +13,7 @@
       <p>Need a Frontend developer? <b>Contact me!</b></p>
     </div>
     <div class="container">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div>
           <label for="name">Name</label>
           <input
@@ -21,11 +21,11 @@
             id="name"
             name="name"
             placeholder="Your name.."
-            formControlName="name"
+            [(ngModel)]="contactData.name"
+            #name="ngModel"
+            required
           />
-          @if (contactForm.controls.name.invalid &&
-          (contactForm.controls.name.touched ||
-          contactForm.controls.name.dirty)) {
+          @if (!name.valid && name.touched) {
           <small>*Please enter your name.</small>
           }
         </div>
@@ -36,11 +36,12 @@
             id="email"
             name="email"
             placeholder="Your email.."
-            formControlName="email"
+            [(ngModel)]="contactData.email"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            #email="ngModel"
+            required
           />
-          @if (contactForm.controls.email.invalid &&
-          (contactForm.controls.email.touched ||
-          contactForm.controls.email.dirty)) {
+          @if (!email.valid && email.touched) {
           <small>*Please enter your email.</small>
           }
         </div>
@@ -51,28 +52,34 @@
             name="message"
             placeholder="Write something.."
             style="height: 200px"
-            formControlName="message"
+            [(ngModel)]="contactData.message"
+            #message="ngModel"
+            minlength="4"
+            required
           ></textarea>
-          @if (contactForm.controls.message.invalid &&
-          (contactForm.controls.message.touched ||
-          contactForm.controls.message.dirty)) {
-          @if(contactForm.controls.message.errors?.['required']) {
+          @if (!message.valid && message.touched && message.value.length <= 0) {
           <small>*Please enter a message.</small>
-          } @if (contactForm.controls.message.errors?.['minlength']) {
+          } @if (!message.valid && message.touched && message.value.length < 4
+          && message.value.length > 0) {
           <small>*Message must be at least 4 chracters long.</small>
-          } }
+          }
         </div>
         <div class="accept-privacy">
           <div>
-            <input type="checkbox" id="check-privacy" formControlName="check" />
+            <input
+              type="checkbox"
+              id="check-privacy"
+              name="check"
+              [(ngModel)]="contactData.checked"
+              #checked="ngModel"
+              required
+            />
             <label for="check-privacy"
               >I've read the <span>privacy police</span> and agree to the
               processing of my data as outlined.</label
             >
           </div>
-          @if (contactForm.controls.check.invalid &&
-          (contactForm.controls.check.touched ||
-          contactForm.controls.check.dirty)) {
+          @if (!checked.valid && checked.touched) {
           <small>*Please accept the privacy police.</small>
           }
         </div>

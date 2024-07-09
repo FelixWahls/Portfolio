@@ -6,11 +6,7 @@ import {
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import {
-  HttpClient,
-  HttpClientModule,
-  provideHttpClient,
-} from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -34,10 +30,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(), // required animations providers
     provideHttpClient(),
-    importProvidersFrom([
-      HttpClientModule,
-      TranslateModule.forRoot(provideTranslation()),
-    ]),
+    importProvidersFrom([TranslateModule.forRoot(provideTranslation())]),
     provideRouter(routes),
   ],
 };
