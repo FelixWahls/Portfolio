@@ -7,13 +7,18 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, MainContentComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    MainContentComponent,
+    TranslateModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   constructor(public translate: TranslateService) {
-    translate.setDefaultLang('de');
+    translate.setDefaultLang('en');
   }
   title = 'portfolio';
 }

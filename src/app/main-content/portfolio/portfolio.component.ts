@@ -19,8 +19,7 @@ export class PortfolioComponent {
     {
       name: 'Join',
       skills: ['HTML', 'CSS', 'JavaScript'],
-      description:
-        'Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.',
+      description: 'portfolio.join',
       liveTest: '',
       github: '',
       imgSrc: 'assets/img/join.png',
@@ -29,8 +28,7 @@ export class PortfolioComponent {
     {
       name: 'El pollo loco',
       skills: ['JavaScript', 'HTML', 'CSS'],
-      description:
-        'A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to collect coins and salsa bottles to fight the killer chicken.',
+      description: 'portfolio.polloLoco',
       liveTest: '',
       github: '',
       imgSrc: 'assets/img/pollo-loco.png',
@@ -39,8 +37,7 @@ export class PortfolioComponent {
     {
       name: 'Pokedex',
       skills: ['JavaScript', 'HTML', 'CSS', 'API'],
-      description:
-        'Based on the Poke-API. A simple library that provides and catalogues pokemon information.',
+      description: 'portfolio.pokedex',
       liveTest: '',
       github: '',
       imgSrc: 'assets/img/pokedex.png',

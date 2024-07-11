@@ -1,1 +1,32 @@
-{}
+{
+  "header": {
+    "aboutMe": "About me"
+  },
+  "hero": {
+    "title": "FRONTEND DEVELOPER",
+    "talkButton": "Let's talk!"
+  },
+  "aboutMe": {
+    "headline": "About Me",
+    "hello": "Hi! My name is Felix. I'm a passionate frontend developer from Hamburg. Nice to see that you found your way here.",
+    "bulb": "",
+    "puzzle": ""
+  },
+  "mySkills": {
+    "headline": "Meine Skills",
+    "title": "",
+    "button": "Kontakt aufnehmen"
+  },
+  "portfolio": {
+    "title": "",
+    "join": "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "polloLoco": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to collect coins and salsa bottles to fight the killer chicken.",
+    "pokedex": "Based on the Poke-API. A simple library that provides and catalogues pokemon information."
+  },
+  "contact": {
+    "headline": "Kontakt",
+    "subline": "",
+    "paragraph": "",
+    "message": "Nachricht"
+  }
+}

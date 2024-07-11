@@ -2,7 +2,9 @@
   <div class="nav-wrapper">
     <h2>Felix</h2>
     <nav>
-      <a href="#about-me">About Me</a>
+      <a (click)="changeLanguage('en')">En</a>
+      <a (click)="changeLanguage('de')">De</a>
+      <a href="#about-me">{{ "header.aboutMe" | translate }}</a>
       <a href="#my-skills">Skills</a>
       <a href="#portfolio">Portfolio</a>
     </nav>
