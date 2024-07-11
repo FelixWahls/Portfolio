@@ -71,6 +71,7 @@ button {
   border-radius: 10px;
   transition: background-color 125ms ease-in-out, padding 125ms ease-in-out;
   cursor: pointer;
+  box-shadow: 4px 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
 
   &:hover {
     background-color: #4b47ff;

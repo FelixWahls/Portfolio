@@ -15,6 +15,7 @@ section {
     margin-right: 50px;
     height: 4px;
     background-color: $main-focus;
+    border-radius: 0 4px 4px 0;
   }
 
   > h2 {
@@ -58,8 +59,12 @@ textarea {
   color: white;
 }
 
-form div {
-  margin-top: 16px;
+.fixed-height-small {
+  height: 100px;
+}
+
+.fixed-height-big {
+  height: 265px;
 }
 
 small {
@@ -80,6 +85,7 @@ input[type="submit"] {
   border-radius: 10px;
   cursor: pointer;
   font-size: 23px;
+  box-shadow: 4px 4px 4px 0 rgba($color: #000000, $alpha: 0.25);
 }
 
 input[type="submit"]:hover {
@@ -110,8 +116,13 @@ textarea:focus {
 }
 
 .accept-privacy {
+  min-height: 75px;
   > div {
     @include dFlex($jc: flex-start, $g: 8px);
+
+    > label {
+      font-size: 14px;
+    }
   }
 }
 
@@ -142,4 +153,95 @@ input[type="checkbox"]:checked:before {
   max-width: 500px;
   z-index: -1;
   transform: rotate(90deg);
+}
+
+@media (max-width: 1250px) {
+  .section-header {
+    > h2 {
+      font-size: 72px;
+    }
+  }
+
+  main {
+    gap: 50px;
+    > .description {
+      > h3 {
+        font-size: 28px;
+        margin-bottom: 35px;
+      }
+
+      > p {
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  main {
+    flex-direction: column;
+    gap: 16px;
+    > .description {
+      max-width: 620px;
+      > h3 {
+        font-size: 28px;
+        margin-bottom: 35px;
+      }
+    }
+  }
+  .contact-shadow {
+    bottom: -350px;
+    left: auto;
+    right: -200px;
+    transform: rotate(-20deg);
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 599px) {
+  .section-header {
+    > .hor-line {
+      width: 20px;
+      margin-right: 15px;
+    }
+  }
+  main {
+    padding: 0 40px;
+    margin-top: 36px;
+    > .description {
+      > h3 {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  .contact-shadow {
+    bottom: -200px;
+    left: auto;
+    right: -100px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-header {
+    > h2 {
+      font-size: 45px;
+    }
+  }
+
+  main {
+    padding: 0 28px;
+    > .description {
+      > h3 {
+        font-size: 23px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    font-size: 16px;
+  }
 }

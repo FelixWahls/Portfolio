@@ -14,7 +14,7 @@
     </div>
     <div class="container">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-        <div>
+        <div class="fixed-height-small">
           <label for="name">Name</label>
           <input
             type="text"
@@ -29,7 +29,7 @@
           <small>*Please enter your name.</small>
           }
         </div>
-        <div>
+        <div class="fixed-height-small">
           <label for="email">E-Mail</label>
           <input
             type="email"
@@ -45,7 +45,7 @@
           <small>*Please enter your email.</small>
           }
         </div>
-        <div>
+        <div class="fixed-height-big">
           <label for="message">Message</label>
           <textarea
             id="message"
@@ -74,7 +74,7 @@
               #checked="ngModel"
               required
             />
-            <label for="check-privacy"
+            <label for="check-privacy" class="privacy-label"
               >I've read the <span>privacy police</span> and agree to the
               processing of my data as outlined.</label
             >
