@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     HeaderComponent,
     MainContentComponent,
     TranslateModule,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

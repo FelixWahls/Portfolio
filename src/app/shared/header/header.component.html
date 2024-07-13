@@ -2,11 +2,53 @@
   <div class="nav-wrapper">
     <h2>Felix</h2>
     <nav>
-      <a (click)="changeLanguage('en')">En</a>
-      <a (click)="changeLanguage('de')">De</a>
+      <img
+        [src]="languageService.currentFlag"
+        alt=""
+        (click)="toggleLanguageSelect()"
+      />
+      <div class="language-select" [class.open]="isOpen">
+        <span (click)="changeLanguage('en')"
+          ><img src="assets/img/american-flag.png" alt="" />
+          <p>EN</p></span
+        >
+        <span (click)="changeLanguage('de')"
+          ><img src="assets/img/german-flag.png" alt="" />
+          <p>DE</p></span
+        >
+      </div>
       <a href="#about-me">{{ "header.aboutMe" | translate }}</a>
       <a href="#my-skills">Skills</a>
       <a href="#portfolio">Portfolio</a>
+      <div class="burger-menu">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 2H31"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            class="middle-line"
+            d="M1 16H31"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M1 30H31"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
     </nav>
   </div>
 </div>

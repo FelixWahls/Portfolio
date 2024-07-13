@@ -17,8 +17,14 @@ export class HeaderComponent {
   ) {}
 
   lang = inject(LanguageDataService);
+  isOpen = false;
 
   changeLanguage(langCode: string) {
     this.lang.changeLanguageService(langCode);
+    this.isOpen = false;
+  }
+
+  toggleLanguageSelect() {
+    this.isOpen = !this.isOpen;
   }
 }

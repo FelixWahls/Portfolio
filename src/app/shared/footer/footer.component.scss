@@ -1,0 +1,78 @@
+@import "./../variables.scss";
+
+section {
+  @include dFlex($g: 23px);
+  flex-direction: column;
+  border-top: 4px solid $main-focus;
+  padding: 60px 0;
+}
+
+span {
+  font-size: 23px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h2 {
+  margin-bottom: 30px;
+}
+
+.desktop-imprint {
+  display: none;
+}
+
+.contacts {
+  @include dFlex($jc: flex-start, $g: 42px);
+
+  > svg:hover {
+    scale: 115%;
+    cursor: pointer;
+
+    path {
+      fill: $main-focus;
+    }
+  }
+
+  > a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 750px) {
+  section {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 40px;
+  }
+
+  .mobile-imprint {
+    display: none;
+  }
+  .desktop-imprint {
+    display: block;
+  }
+
+  .logo-container {
+    position: relative;
+
+    > .desktop-imprint {
+      position: absolute;
+      bottom: -20px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 950px) {
+  section {
+    padding: 60px 100px;
+  }
+}
