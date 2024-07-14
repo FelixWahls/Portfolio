@@ -29,8 +29,10 @@
         <span>{{ project.skills.join(" | ") }}</span>
         <p>{{ project.description }}</p>
         <div class="project-btns">
-          <button class="test">Live test</button>
-          <button class="github">Github</button>
+          <a href="" target="_blank" class="test">Live test</a>
+          <a href="{{ project.github }}" target="_blank" class="github"
+            >Github</a
+          >
         </div>
       </div>
     </div>

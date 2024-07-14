@@ -3,7 +3,7 @@
 section {
   @include dFlex($ai: flex-start, $jc: flex-start, $g: 64px);
   width: 100%;
-  padding-top: 106px;
+  padding-top: 116px;
   position: relative;
 
   > .hero-wrapper {
@@ -62,10 +62,10 @@ section {
   }
 }
 
-button {
+.contact-link {
+  text-decoration: none;
   padding: 15px 30px;
   background-color: $main-focus;
-  border: unset;
   color: white;
   font-size: 23px;
   border-radius: 10px;

@@ -11,6 +11,10 @@
   @include dFlex();
 }
 
+.flag-img {
+  width: 36px;
+}
+
 .nav-wrapper {
   width: 100%;
   max-width: 1440px;
@@ -56,10 +60,10 @@
       }
     }
   }
+}
 
-  > nav .burger-menu {
-    display: none;
-  }
+.burger-menu {
+  display: none;
 }
 
 .language-select {
@@ -99,21 +103,49 @@
     > nav a {
       display: none;
     }
-    > nav .burger-menu {
-      @include dFlex();
-      cursor: pointer;
+  }
 
-      svg {
+  .burger-menu {
+    @include dFlex();
+    cursor: pointer;
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      .top-line,
+      .middle-line,
+      .bottom-line {
+        transition: all 0.15s linear;
+        transform-origin: center;
+      }
+
+      .middle-line {
+        transition: transform 0.15s ease-in-out;
+      }
+
+      &:hover {
         .middle-line {
-          transition: transform 0.15s ease-in-out;
-          transform-origin: center;
+          transform: scaleX(0.5);
         }
+      }
+    }
 
-        &:hover {
-          .middle-line {
-            transform: scaleX(0.5);
-          }
-        }
+    &.open {
+      .top-line {
+        transform: rotate(45deg) translate(5px, 10px);
+      }
+
+      .bottom-line {
+        transform: rotate(-45deg) translate(5px, -10px);
+      }
+
+      .middle-line {
+        display: none;
       }
     }
   }

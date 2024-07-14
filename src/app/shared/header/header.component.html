@@ -6,21 +6,27 @@
         [src]="languageService.currentFlag"
         alt=""
         (click)="toggleLanguageSelect()"
+        class="flag-img"
       />
       <div class="language-select" [class.open]="isOpen">
         <span (click)="changeLanguage('en')"
-          ><img src="assets/img/american-flag.png" alt="" />
+          ><img src="assets/img/american-flag.png" alt="" class="flag-img" />
           <p>EN</p></span
         >
         <span (click)="changeLanguage('de')"
-          ><img src="assets/img/german-flag.png" alt="" />
+          ><img src="assets/img/german-flag.png" alt="" class="flag-img" />
           <p>DE</p></span
         >
       </div>
       <a href="#about-me">{{ "header.aboutMe" | translate }}</a>
       <a href="#my-skills">Skills</a>
       <a href="#portfolio">Portfolio</a>
-      <div class="burger-menu">
+      <div
+        class="burger-menu"
+        id="burger-menu"
+        (click)="toggleMenu()"
+        [ngClass]="{ open: menuOpen }"
+      >
         <svg
           width="32"
           height="32"
@@ -29,6 +35,7 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
+            class="top-line"
             d="M1 2H31"
             stroke="white"
             stroke-width="2"
@@ -42,6 +49,7 @@
             stroke-linecap="round"
           />
           <path
+            class="bottom-line"
             d="M1 30H31"
             stroke="white"
             stroke-width="2"

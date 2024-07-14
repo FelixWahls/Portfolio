@@ -21,7 +21,7 @@ export class PortfolioComponent {
       skills: ['HTML', 'CSS', 'JavaScript'],
       description: 'portfolio.join',
       liveTest: '',
-      github: '',
+      github: 'https://github.com/FelixWahls/Join-dummy',
       imgSrc: 'assets/img/join.png',
     },
 
@@ -30,7 +30,7 @@ export class PortfolioComponent {
       skills: ['JavaScript', 'HTML', 'CSS'],
       description: 'portfolio.polloLoco',
       liveTest: '',
-      github: '',
+      github: 'https://github.com/FelixWahls/El-Pollo-Loco',
       imgSrc: 'assets/img/pollo-loco.png',
     },
 
@@ -39,7 +39,7 @@ export class PortfolioComponent {
       skills: ['JavaScript', 'HTML', 'CSS', 'API'],
       description: 'portfolio.pokedex',
       liveTest: '',
-      github: '',
+      github: 'https://github.com/FelixWahls/Pokedex',
       imgSrc: 'assets/img/pokedex.png',
     },
   ];
