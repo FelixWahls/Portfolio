@@ -2,15 +2,18 @@ import { Component } from '@angular/core';
 import { projects } from '../../shared/interfaces';
 import { CommonModule } from '@angular/common';
 import AOS from 'aos';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule, HttpClientModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
 })
 export class PortfolioComponent {
+  constructor(public translateService: TranslateService) {}
   ngOnInit() {
     AOS.init();
   }

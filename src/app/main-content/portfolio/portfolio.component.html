@@ -27,7 +27,7 @@
       >
         <h3>{{ project.name }}</h3>
         <span>{{ project.skills.join(" | ") }}</span>
-        <p>{{ project.description }}</p>
+        <p>{{ project.description | translate }}</p>
         <div class="project-btns">
           <a href="" target="_blank" class="test">Live test</a>
           <a href="{{ project.github }}" target="_blank" class="github"

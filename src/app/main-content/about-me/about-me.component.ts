@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import AOS from 'aos';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about-me',
@@ -11,7 +11,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './about-me.component.scss',
 })
 export class AboutMeComponent {
-  constructor(public translate: TranslateService) {}
+  constructor() {}
   ngOnInit() {
     AOS.init();
   }

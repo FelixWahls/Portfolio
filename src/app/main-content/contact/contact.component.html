@@ -1,16 +1,18 @@
 <section>
   <div class="section-header" data-aos="fade-right">
     <span class="hor-line"></span>
-    <h2>Contact</h2>
+    <h2>{{ "contact.headline" | translate }}</h2>
   </div>
   <main data-aos="fade-left" data-aos-duration="700">
     <div class="description">
-      <h3>Got a Problem to solve?</h3>
+      <h3>{{ "contact.subline" | translate }}</h3>
       <p>
-        Contact me through this form, I am interested in hearing from you,
-        knowing your ideas and contributing to your projects with my work.
+        {{ "contact.body" | translate }}
       </p>
-      <p>Need a Frontend developer? <b>Contact me!</b></p>
+      <p>
+        {{ "contact.paragraph" | translate }}
+        <b>{{ "contact.paragraph-bold" | translate }}</b>
+      </p>
     </div>
     <div class="container">
       <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
@@ -26,7 +28,7 @@
             required
           />
           @if (!name.valid && name.touched) {
-          <small>*Please enter your name.</small>
+          <small>*{{ "contact.errorName" | translate }}</small>
           }
         </div>
         <div class="fixed-height-small">
@@ -42,11 +44,11 @@
             required
           />
           @if (!email.valid && email.touched) {
-          <small>*Please enter your email.</small>
+          <small>*{{ "contact.errorMail" | translate }}</small>
           }
         </div>
         <div class="fixed-height-big">
-          <label for="message">Message</label>
+          <label for="message">{{ "contact.message" | translate }}</label>
           <textarea
             id="message"
             name="message"
@@ -58,10 +60,10 @@
             required
           ></textarea>
           @if (!message.valid && message.touched && message.value.length <= 0) {
-          <small>*Please enter a message.</small>
+          <small>*{{ "contact.errorMessageEmpty" | translate }}</small>
           } @if (!message.valid && message.touched && message.value.length < 4
           && message.value.length > 0) {
-          <small>*Message must be at least 4 chracters long.</small>
+          <small>*{{ "contact.errorMessageShort" | translate }}</small>
           }
         </div>
         <div class="accept-privacy">
@@ -75,16 +77,17 @@
               required
             />
             <label for="check-privacy" class="privacy-label"
-              >I've read the <span>privacy police</span> and agree to the
-              processing of my data as outlined.</label
+              >{{ "contact.privacyFirst" | translate
+              }}<a>{{ "contact.privacyLink" | translate }}</a>
+              {{ "contact.privacySecond" | translate }}</label
             >
           </div>
           @if (!checked.valid && checked.touched) {
-          <small>*Please accept the privacy police.</small>
+          <small>*{{ "contact.errorPrivacy" | translate }}</small>
           }
         </div>
         <div class="submit-container">
-          <input type="submit" value="Send message :&#41;" />
+          <input type="submit" value="{{ 'contact.button' | translate }}" />
         </div>
       </form>
     </div>

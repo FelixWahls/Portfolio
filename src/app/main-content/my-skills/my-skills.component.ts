@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { skills } from '../../shared/interfaces';
 import AOS from 'aos';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss',
 })

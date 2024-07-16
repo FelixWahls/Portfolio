@@ -1,37 +1,41 @@
-import {
-  ApplicationConfig,
-  importProvidersFrom,
-  provideZoneChangeDetection,
-} from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { provideHttpClient, HttpClient } from '@angular/common/http';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
+import {
+  TranslateModule,
+  TranslateLoader,
+  TranslateModuleConfig,
+} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { provideAnimations } from '@angular/platform-browser/animations';
 
-export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }
 
-export const provideTranslation = () => ({
+const translateModuleConfig: TranslateModuleConfig = {
   defaultLanguage: 'en',
   loader: {
     provide: TranslateLoader,
     useFactory: HttpLoaderFactory,
     deps: [HttpClient],
   },
-});
+};
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideAnimations(), // required animations providers
+    provideClientHydration(),
     provideHttpClient(),
-    importProvidersFrom([TranslateModule.forRoot(provideTranslation())]),
-    provideRouter(routes),
+    importProvidersFrom(
+      BrowserModule,
+      TranslateModule.forRoot(translateModuleConfig)
+    ),
   ],
 };
 export default appConfig;

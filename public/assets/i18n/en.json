@@ -13,20 +13,31 @@
     "puzzle": ""
   },
   "mySkills": {
-    "headline": "Meine Skills",
-    "title": "",
-    "button": "Kontakt aufnehmen"
+    "headline": "My skills",
+    "body": "I have grown my frontend development skills that have allowed me to create different real projects.",
+    "button": "Contact me!"
   },
   "portfolio": {
-    "title": "",
+    "body": "Explore a selection of my work here - Interact with projects to see my skills in action.",
     "join": "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
     "polloLoco": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to collect coins and salsa bottles to fight the killer chicken.",
     "pokedex": "Based on the Poke-API. A simple library that provides and catalogues pokemon information."
   },
   "contact": {
-    "headline": "Kontakt",
-    "subline": "",
-    "paragraph": "",
-    "message": "Nachricht"
+    "headline": "Contact",
+    "subline": "Got a Problem to solve?",
+    "body": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+    "paragraph": "Need a Frontend developer? ",
+    "paragraph-bold": "Contact me!",
+    "message": "Message",
+    "privacyFirst": "I've read the ",
+    "privacyLink": "Datenschutzbestimmungen",
+    "privacySecond": "and agree to the processing of my data as outlined.",
+    "button": "Send message :)",
+    "errorName": "Please enter your name.",
+    "errorMail": "Please enter your email.",
+    "errorMessageEmpty": "Please enter a message.",
+    "errorMessageShort": "Message must be at least 4 characters long.",
+    "errorPrivacy": "Please accept the privacy police."
   }
 }
