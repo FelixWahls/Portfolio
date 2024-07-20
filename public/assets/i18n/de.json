@@ -40,5 +40,8 @@
     "errorMessageEmpty": "Bitte geben Sie eine Nachricht ein.",
     "errorMessageShort": "Die Nachricht muss mindestens 4 Zeichen enthalten.",
     "errorPrivacy": "Bitte akzeptieren sie Datenschutzbestimmungen."
+  },
+  "footer": {
+    "imprint": "Impressum"
   }
 }

@@ -40,5 +40,8 @@
     "errorMessageEmpty": "Please enter a message.",
     "errorMessageShort": "Message must be at least 4 characters long.",
     "errorPrivacy": "Please accept the privacy police."
+  },
+  "footer": {
+    "imprint": "Imprint"
   }
 }
