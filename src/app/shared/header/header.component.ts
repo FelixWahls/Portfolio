@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, TranslateModule, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
   constructor(
@@ -20,6 +20,7 @@ export class HeaderComponent {
   lang = inject(LanguageDataService);
   isOpen = false;
   menuOpen = false;
+  scrollPosition = 0;
 
   changeLanguage(langCode: string) {
     this.lang.changeLanguageService(langCode);
@@ -32,5 +33,14 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+    if (this.menuOpen) {
+      this.scrollPosition = window.scrollY;
+      document.body.style.top = `-${this.scrollPosition}px`;
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+      document.body.style.top = '';
+      window.scrollTo(0, this.scrollPosition);
+    }
   }
 }

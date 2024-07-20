@@ -21,6 +21,11 @@ body {
   color: white;
 }
 
+.no-scroll {
+  position: fixed;
+  width: 100%;
+}
+
 app-root {
   width: 100%;
   max-width: 1440px;
