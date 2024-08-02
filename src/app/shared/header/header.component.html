@@ -61,14 +61,14 @@
   </div>
 </div>
 <div class="mobile-nav" [class.menuOpen]="menuOpen">
-  <a href="#about-me" (click)="toggleMenu()">{{
+  <a routerLink="/about-me" (click)="toggleMenu()">{{
     "header.aboutMe" | translate
   }}</a
-  ><a href="#my-skills" (click)="toggleMenu()">{{
+  ><a routerLink="/my-skills" (click)="toggleMenu()">{{
     "mySkills.headline" | translate
   }}</a
-  ><a href="#portfolio" (click)="toggleMenu()">Portfolio</a
-  ><a href="#contact" (click)="toggleMenu()">{{
+  ><a routerLink="/portfolio" (click)="toggleMenu()">Portfolio</a
+  ><a routerLink="/contact" (click)="toggleMenu()">{{
     "header.contact" | translate
   }}</a>
 </div>
