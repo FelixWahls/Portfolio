@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss',
 })
-export class PrivacyPolicyComponent {}
+export class PrivacyPolicyComponent {
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
+}

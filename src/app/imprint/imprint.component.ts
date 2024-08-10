@@ -8,4 +8,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss',
 })
-export class ImprintComponent {}
+export class ImprintComponent {
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
+}

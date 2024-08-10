@@ -18,9 +18,15 @@
           <p>DE</p></span
         >
       </div>
-      <a href="#about-me">{{ "header.aboutMe" | translate }}</a>
-      <a href="#my-skills">Skills</a>
-      <a href="#portfolio">Portfolio</a>
+      <a routerLink="/about-me" (click)="scrollToComponent('about-me')">{{
+        "header.aboutMe" | translate
+      }}</a>
+      <a routerLink="/my-skills" (click)="scrollToComponent('my-skills')"
+        >Skills</a
+      >
+      <a routerLink="/portfolio" (click)="scrollToComponent('portfolio')"
+        >Portfolio</a
+      >
       <div
         class="burger-menu"
         id="burger-menu"
@@ -61,14 +67,21 @@
   </div>
 </div>
 <div class="mobile-nav" [class.menuOpen]="menuOpen">
-  <a routerLink="/about-me" (click)="toggleMenu()">{{
-    "header.aboutMe" | translate
-  }}</a
-  ><a routerLink="/my-skills" (click)="toggleMenu()">{{
-    "mySkills.headline" | translate
-  }}</a
-  ><a routerLink="/portfolio" (click)="toggleMenu()">Portfolio</a
-  ><a routerLink="/contact" (click)="toggleMenu()">{{
-    "header.contact" | translate
-  }}</a>
+  <a
+    routerLink="/about-me"
+    (click)="toggleMenu(); scrollToComponent('about-me')"
+    >{{ "header.aboutMe" | translate }}</a
+  ><a
+    routerLink="/my-skills"
+    (click)="toggleMenu(); scrollToComponent('my-skills')"
+    >{{ "mySkills.headline" | translate }}</a
+  ><a
+    routerLink="/portfolio"
+    (click)="toggleMenu(); scrollToComponent('portfolio')"
+    >Portfolio</a
+  ><a
+    routerLink="/contact"
+    (click)="toggleMenu(); scrollToComponent('contact')"
+    >{{ "header.contact" | translate }}</a
+  >
 </div>

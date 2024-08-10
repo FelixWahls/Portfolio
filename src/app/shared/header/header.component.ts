@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LanguageDataService } from '../../language-data.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,8 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   constructor(
     public translateService: TranslateService,
-    public languageService: LanguageDataService
+    public languageService: LanguageDataService,
+    public viewportScroller: ViewportScroller
   ) {}
 
   lang = inject(LanguageDataService);
@@ -42,5 +43,11 @@ export class HeaderComponent {
       document.body.style.top = '';
       window.scrollTo(0, this.scrollPosition);
     }
+  }
+
+  scrollToComponent(componentId: string): void {
+    setTimeout(() => {
+      this.viewportScroller.scrollToAnchor(componentId);
+    }, 5);
   }
 }
