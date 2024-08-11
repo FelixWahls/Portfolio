@@ -27,7 +27,7 @@ export class ContactComponent {
     checked: false,
   };
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
