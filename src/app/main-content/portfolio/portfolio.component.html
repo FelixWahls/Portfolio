@@ -6,10 +6,7 @@
     <h2>Portfolio</h2>
     <span class="hor-line hor-line-right"></span>
   </div>
-  <p data-aos="fade-left">
-    Explore a selection of my work here - Interact with projects to see my
-    skills in action.
-  </p>
+  <p data-aos="fade-left">{{ "portfolio.body" | translate }}</p>
   <div class="all-projects">
     @for (project of projects; track project.name; let odd = $odd) {
     <div [ngClass]="{ 'row-reverse': odd }" class="single-project">
