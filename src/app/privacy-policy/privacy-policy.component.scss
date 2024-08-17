@@ -1,0 +1,13 @@
+#generator_results {
+  margin-top: 100px;
+  margin-bottom: 24px;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+
+  &:hover {
+    color: rgb(115, 238, 221);
+  }
+}
