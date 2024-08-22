@@ -162,7 +162,7 @@
     right: 0;
     transform: translateX(650px);
     transition: all 0.175s ease-in-out;
-    background-color: rgba($color: #000000, $alpha: 0.5);
+    background-color: rgba($color: #000000, $alpha: 0.8);
     @include dFlex($g: 29px);
     flex-direction: column;
     z-index: 190;
@@ -176,6 +176,12 @@
       text-decoration: none;
       color: white;
       font-size: 23px;
+      transition: all 0.2s, color 0.15s;
+
+      &:hover {
+        text-decoration: underline;
+        color: $main-focus;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 #generator_results {
   margin-top: 100px;
   margin-bottom: 24px;
+  padding: 0 20px;
 }
 
 a {
@@ -9,5 +10,20 @@ a {
 
   &:hover {
     color: rgb(115, 238, 221);
+  }
+}
+
+ul {
+  margin: 24px 0;
+  list-style-position: inside;
+
+  > li {
+    margin: 8px 0;
+  }
+}
+
+@media (min-width: 640px) {
+  #generator_results {
+    padding: 30px 60px;
   }
 }
