@@ -9,7 +9,7 @@
   },
   "aboutMe": {
     "headline": "Über mich",
-    "hello": "Hi! My name is Felix. I'm a passionate frontend developer from Hamburg. Nice to see that you found your way here.",
+    "hello": "Hallo! Mein Name ist Felix. Ich bin ein leidenschaftlicher Frontend-Entwickler aus Hamburg. Schön, dass du den Weg hierher gefunden hast.",
     "bulb": "",
     "puzzle": ""
   },
@@ -87,7 +87,7 @@
     "privacyTwelve": "Fragen zum Datenschutz",
     "privacyTwelveBody": "Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail an den oben genannten Verantwortlichen.",
     "privacyThirteen": "Urheberrechtliche Hinweise",
-    "privacyThirteenBodyOnw": "Diese Datenschutzerklärung wurde mit Hilfe der activeMind AG erstellt – den Experten für",
+    "privacyThirteenBodyOne": "Diese Datenschutzerklärung wurde mit Hilfe der activeMind AG erstellt – den Experten für",
     "privacyThirteenBodyTwo": "externe Datenschutzbeauftragte"
   }
 }

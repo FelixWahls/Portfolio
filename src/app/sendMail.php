@@ -1,37 +1,61 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
-switch ($_SERVER['REQUEST_METHOD']) {
-    case ("OPTIONS"): //Allow preflighting to take place.
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: POST");
-        header("Access-Control-Allow-Headers: content-type");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $json = file_get_contents('php://input');
+    $params = json_decode($json);
+
+    if (!$params || !isset($params->name) || !isset($params->email) || !isset($params->message)) {
+        echo json_encode(["status" => "error", "message" => "Invalid input"]);
         exit;
-        case("POST"): //Send the email;
-            header("Access-Control-Allow-Origin: *");
-            // Payload is not send to $_POST Variable,
-            // is send to php:input as a text
-            $json = file_get_contents('php://input');
-            //parse the Payload from text format to Object
-            $params = json_decode($json);
-    
-            $email = $params->email;
-            $name = $params->name;
-            $message = $params->message;
-    
-            $recipient = 'developer@felix-wahls.com';  
-            $subject = "Contact From <$email>";
-            $message = "From:" . $name . "<br><br>" . $message ;
-    
-            $headers   = array();
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=utf-8';
+    }
 
-            // Additional headers
-            $headers[] = "From: noreply@mywebsite.com";
+    $mail = new PHPMailer(true);
 
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
-            break;
-        default: //Reject any non POST or OPTIONS requests.
-            header("Allow: POST", true, 405);
-            exit;
-    } 
+    try {
+        //Server settings
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.ionos.de';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'developer@felix-wahls.com';  // Deine Email von IONOS
+        $mail->Password   = 'Ichbinsuper1994!';           // Dein Email password von IONOS
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+
+        //Recipients
+        $mail->setFrom('noreply@felix-wahls.com', 'Contact Form');  // Kann drin stehen was will. Ich habe noreply@daniel-lehmann.dev
+        $mail->addAddress('developer@felix-wahls.com');	// Deine empfangs email addresse. Ich habe da auch meine IONOS mail angegeben.
+        $mail->addReplyTo($params->email, $params->name);
+
+        //Content
+        $mail->isHTML(true);
+        $mail->Subject = "New Contact Form Submission from {$params->name}";
+        $mail->Body    = "
+            <p><strong>Name:</strong> " . htmlspecialchars($params->name) . "</p>
+            <p><strong>Email:</strong> " . htmlspecialchars($params->email) . "</p>
+            <p><strong>Message:</strong></p>
+            <p>" . nl2br(htmlspecialchars($params->message)) . "</p>
+        ";
+
+        $mail->send();
+        echo json_encode(["status" => "success", "message" => "Email sent successfully"]);
+    } catch (Exception $e) {
+        error_log("Mailer Error: " . $mail->ErrorInfo);
+        echo json_encode(["status" => "error", "message" => "Failed to send email"]);
+    }
+} else {
+    echo json_encode(["status" => "error", "message" => "Invalid request method"]);
+}
+?>
