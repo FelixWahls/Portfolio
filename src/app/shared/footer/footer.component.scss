@@ -59,11 +59,22 @@ h2 {
   }
 
   .logo-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    > .logo {
+      width: 100px;
+      cursor: pointer;
+    }
 
     > .desktop-imprint {
-      position: absolute;
       bottom: -20px;
+      margin-left: 6px;
+
+      &:hover {
+        color: $main-focus;
+        text-decoration: underline;
+      }
     }
   }
 
