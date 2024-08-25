@@ -16,6 +16,7 @@ export const routes: Routes = [
     path: 'privacyPolicy',
     component: PrivacyPolicyComponent,
   },
+  { path: 'hero', redirectTo: '', pathMatch: 'full' },
   { path: 'about-me', redirectTo: '', pathMatch: 'full' },
   { path: 'my-skills', redirectTo: '', pathMatch: 'full' },
   { path: 'portfolio', redirectTo: '', pathMatch: 'full' },

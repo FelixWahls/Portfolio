@@ -38,15 +38,15 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
-    if (this.menuOpen) {
-      this.scrollPosition = window.scrollY;
-      document.body.style.top = `-${this.scrollPosition}px`;
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-      document.body.style.top = '';
-      window.scrollTo(0, this.scrollPosition);
-    }
+    // if (this.menuOpen) {
+    //   this.scrollPosition = window.scrollY;
+    //   document.body.style.top = `-${this.scrollPosition}px`;
+    //   document.body.classList.add('no-scroll');
+    // } else {
+    //   document.body.classList.remove('no-scroll');
+    //   document.body.style.top = '';
+    //   window.scrollTo(0, this.scrollPosition);
+    // }
   }
 
   scrollToComponent(componentId: string): void {
