@@ -9,4 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  scrollBottom() {
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+}

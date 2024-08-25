@@ -23,6 +23,10 @@ export class HeaderComponent {
   menuOpen = false;
   scrollPosition = 0;
 
+  scrollTop() {
+    window.scrollTo(0, 0);
+  }
+
   changeLanguage(langCode: string) {
     this.lang.changeLanguageService(langCode);
     this.isOpen = false;

@@ -1,6 +1,12 @@
 <section>
   <div class="logo-container">
-    <img src="assets/img/felix-logo.png" alt="logo" class="logo" />
+    <img
+      src="assets/img/felix-logo.png"
+      alt="logo"
+      class="logo"
+      routerLink="/contact"
+      (click)="scrollBottom()"
+    />
     <a routerLink="/imprint" class="desktop-imprint">{{
       "footer.imprint" | translate
     }}</a>

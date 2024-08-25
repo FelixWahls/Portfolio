@@ -15,6 +15,9 @@ import { RouterModule } from '@angular/router';
 })
 export class ContactComponent {
   http = inject(HttpClient);
+  buttonReady = true;
+  buttonSending = false;
+  buttonSuccess = false;
 
   ngOnInit() {
     AOS.init();
@@ -42,6 +45,8 @@ export class ContactComponent {
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.buttonReady = false;
+      this.buttonSending = true;
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
@@ -51,9 +56,16 @@ export class ContactComponent {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () =>
+            setTimeout(() => {
+              this.buttonSuccess = true;
+            }, 2000),
         });
+      (this.buttonReady = true),
+        (this.buttonSending = false),
+        (this.buttonSuccess = false);
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      console.log('works');
       ngForm.resetForm();
     }
   }
